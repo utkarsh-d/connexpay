@@ -1,6 +1,3 @@
-# coding: utf-8
-# lib = File.expand_path('../lib', __FILE__)
-# $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require_relative 'lib/connexpay/version'
 Gem::Specification.new do |s|
   s.name          = 'connexpay'
@@ -13,9 +10,8 @@ Gem::Specification.new do |s|
   s.homepage      = 'https://connexpay.com/'
   s.license       = 'MIT'
 
-  #  specify re=uby version
-  s.files         = ["lib/connexpay.rb"]
-  s.require_paths = ["lib"]
+  s.required_ruby_version = '~> 2.0'
+  s.files                 = ["lib/connexpay.rb"]
+  s.require_paths         = ["lib"]
   s.add_runtime_dependency 'httparty'
-  # s.add_runtime_dependency 'activesupport'
 end

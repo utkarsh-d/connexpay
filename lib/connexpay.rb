@@ -21,8 +21,7 @@ module Connexpay
     yield(configuration)
   end
   
-  def self.get_token
-    puts Connexpay::Account.new.create_token
-    # puts end_point
+  def self.generate_token
+    Connexpay::Account.new.create_token
   end
 end

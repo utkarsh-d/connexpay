@@ -28,8 +28,6 @@ module Connexpay
                                 { headers: { "Content-Type" => "application/x-www-form-urlencoded" },
                                 body: { username: config.username, password: config.password, grant_type: config.grant_type } })
         response.ok? ? response.parsed_response : 'some error occured.'
-        # puts end_point
-        # puts config.username
       rescue => exception
         exeption.message
       end
