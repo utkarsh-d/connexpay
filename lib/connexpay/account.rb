@@ -27,9 +27,9 @@ module Connexpay
         response = HTTParty.post(end_point,
                                 { headers: { "Content-Type" => "application/x-www-form-urlencoded" },
                                 body: { username: config.username, password: config.password, grant_type: config.grant_type } })
-        response.ok? ? response.parsed_response : 'some error occured.'
+        response.parsed_response
       rescue => exception
-        exeption.message
+        { 'error' => exception.message }
       end
     end
 

@@ -115,9 +115,9 @@ module Connexpay
         response = HTTParty.post(end_point, {
                                 headers: { "Content-Type" => "application/json", "Authorization" => token },
                                 body: query_params })
-        response.created? ? response.parsed_response : 'some error occured.'
+        response.parsed_response
       rescue => exception
-        exeption.message
+        { 'error' => exception.message }
       end
     end
 
