@@ -5,8 +5,7 @@ module Connexpay
 
     # end point
     def end_point
-      # defined?(Rails) && Rails.env == 'production' ? self.production_url : self.test_url
-      false ? live_url : test_url
+      defined?(Rails) && Rails.env == 'production' ? self.production_url : self.test_url
     end
 
     def config
